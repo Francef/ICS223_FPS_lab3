@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4713767747612140245, guid: 815763f87d0712145b14a9954ec35b14, type: 3}
+  iguanaPrefab: {fileID: 141256, guid: b4806bcfd71324778b360c0299195b34, type: 3}
+  iguanaSpawnPt: {fileID: 251666017}
 --- !u!4 &72400936
 Transform:
   m_ObjectHideFlags: 0
@@ -1298,6 +1300,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &251666016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251666017}
+  m_Layer: 0
+  m_Name: iguanaSpawnPt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &251666017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251666016}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.68, y: 0, z: 10.75}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260963144
 GameObject:
   m_ObjectHideFlags: 0
@@ -11911,3 +11944,4 @@ SceneRoots:
   - {fileID: 72400936}
   - {fileID: 260963145}
   - {fileID: 1853804562}
+  - {fileID: 251666017}
