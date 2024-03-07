@@ -55,13 +55,13 @@ public class RayShooter : MonoBehaviour
 
     private void OnGUI()
     {
-        GUIStyle style = new GUIStyle();
+       /* GUIStyle style = new GUIStyle();
         style.fontSize = aimSize;
 
         // find the center of the camera view and adjust for asterisk
         float posX = cam.pixelWidth / 2 - aimSize / 4;
         float posY = cam.pixelHeight / 2 - aimSize / 2;
 
-        GUI.Label(new Rect(posX, posY, aimSize, aimSize), "*", style);
+        GUI.Label(new Rect(posX, posY, aimSize, aimSize), "*", style);*/
     }
 }
