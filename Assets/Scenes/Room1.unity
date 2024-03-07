@@ -4885,7 +4885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da5acd2d18e22545b5961bbf984da7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiCon: {fileID: 0}
+  uiCon: {fileID: 1346622109}
   settingsPopup: {fileID: 428676732}
 --- !u!1 &1097197405
 GameObject:
