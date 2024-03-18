@@ -51,6 +51,9 @@ public class SceneController : MonoBehaviour
                 enemies[i].transform.position = spawnPoint;
                 float angle = Random.Range(0, 360);
                 enemies[i].transform.Rotate(0, angle, 0);
+                WanderingAI ai = enemies[i].GetComponent<WanderingAI>();
+                int currentDifficulty = GetDifficulty();
+                ai.SetDifficulty(currentDifficulty);
             }
         }
         
@@ -59,16 +62,33 @@ public class SceneController : MonoBehaviour
     private void Awake()
     {
         Messenger.AddListener(GameEvent.ENEMY_DEAD, OnEnemyDead);
+        Messenger<int>.AddListener(GameEvent.DIFFICULTY_CHANGED, OnDifficultyChanged);
     }
 
     private void OnDestroy()
     {
         Messenger.RemoveListener(GameEvent.ENEMY_DEAD, OnEnemyDead);
+        Messenger<int>.RemoveListener(GameEvent.DIFFICULTY_CHANGED, OnDifficultyChanged);
     }
 
     private void OnEnemyDead()
     {
         score++;
         ui.UpdateScore(score);
+    }
+
+    private void OnDifficultyChanged(int newDifficulty)
+    {
+        Debug.Log("Scene.OnDifficultyChanged(" +  newDifficulty + ")");
+        for(int i = 0; i < enemies.Length; i++)
+        {
+            WanderingAI ai = enemies[i].GetComponent<WanderingAI>();
+            ai.SetDifficulty(newDifficulty);
+        }
+    }
+
+    public int GetDifficulty()
+    {
+        return PlayerPrefs.GetInt("difficulty", 1);
     }
 }
