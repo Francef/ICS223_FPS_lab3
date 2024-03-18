@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    private int score = 0;
+    //private int score = 0;
     [SerializeField] private TextMeshProUGUI scoreValue;
     [SerializeField] private Image healthBar;
     [SerializeField] private Image crossHair;
@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateScore(score);
+        //UpdateScore(score);
         healthBar.fillAmount = 1;
         healthBar.color = Color.green;
         SetGameActive(true);

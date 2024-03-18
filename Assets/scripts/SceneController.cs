@@ -15,6 +15,9 @@ public class SceneController : MonoBehaviour
     private int numIguanas = 10;
     [SerializeField]
     private Transform iguanaSpawnPt;
+    [SerializeField] private UIController ui;
+    
+    private int score = 0;
 
     private void Start()
     {
@@ -32,6 +35,8 @@ public class SceneController : MonoBehaviour
                 iguanas[i].transform.Rotate(0, angle, 0);
             }
         }
+
+        ui.UpdateScore(score);
     }
 
     // Update is called once per frame
@@ -49,5 +54,21 @@ public class SceneController : MonoBehaviour
             }
         }
         
+    }
+
+    private void Awake()
+    {
+        Messenger.AddListener(GameEvent.ENEMY_DEAD, OnEnemyDead);
+    }
+
+    private void OnDestroy()
+    {
+        Messenger.RemoveListener(GameEvent.ENEMY_DEAD, OnEnemyDead);
+    }
+
+    private void OnEnemyDead()
+    {
+        score++;
+        ui.UpdateScore(score);
     }
 }
