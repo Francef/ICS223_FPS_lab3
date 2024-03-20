@@ -33,7 +33,7 @@ public class SettingsPopup : BasePopup
         base.Close();
     }
 
-    public bool IsActive()
+    override public bool IsActive()
     {
         return gameObject.activeSelf;
     }

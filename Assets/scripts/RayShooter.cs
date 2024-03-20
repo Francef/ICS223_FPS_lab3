@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 using static UnityEngine.GraphicsBuffer;
 
-public class RayShooter : MonoBehaviour
+public class RayShooter : ActiveDuringGameplay
 {
     [SerializeField]
     private Camera cam;
@@ -60,4 +60,5 @@ public class RayShooter : MonoBehaviour
 
         GUI.Label(new Rect(posX, posY, aimSize, aimSize), "*", style);*/
     }
+
 }

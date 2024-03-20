@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class OptionsPopup : BasePopup
 {
-    public UIController uiCon;
     [SerializeField] private SettingsPopup settingsPopup;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +27,7 @@ public class OptionsPopup : BasePopup
         base.Close();
     }
 
-    public bool IsActive()
+    override public bool IsActive()
     {
         return gameObject.activeSelf;
     }
@@ -48,7 +47,6 @@ public class OptionsPopup : BasePopup
 
     public void OnReturnToGameButton()
     {
-        uiCon.SetGameActive(true);
         Debug.Log("return to game");
         Close();
     }
