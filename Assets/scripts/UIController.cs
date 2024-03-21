@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private SettingsPopup settingsPopup;
     private float initialHealth = 1.0f;
     private int popupsActive = 0;
+    [SerializeField] private GameOverPopup gameOverPopup;
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +100,11 @@ public class UIController : MonoBehaviour
         {
             SetGameActive(true);
         }
+    }
+
+    public void ShowGameOverPopup()
+    {
+        gameOverPopup.Open();
     }
 
 }

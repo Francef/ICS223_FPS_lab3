@@ -8,6 +8,7 @@ public class FPSInput : MonoBehaviour
     private float speed = 9.0f;
     [SerializeField]
     private CharacterController charController;
+    private float pushForce = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,15 @@ public class FPSInput : MonoBehaviour
         movement = transform.TransformDirection(movement);
 
         charController.Move(movement);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+        // does it have a rigidbody and is physics enabled?
+        if (body != null && !body.isKinematic)
+        {
+            body.velocity = hit.moveDirection * pushForce;
+        }
     }
 }
