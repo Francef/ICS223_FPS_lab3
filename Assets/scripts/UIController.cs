@@ -80,6 +80,7 @@ public class UIController : MonoBehaviour
     public void UpdateHealth(float healthPercentage)
     {
         healthBar.color = Color.Lerp(Color.red, Color.green, healthPercentage);
+        healthBar.fillAmount = healthPercentage;
     }
 
     private void OnPopupOpened()
